@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>わんわんウォーク | 散歩仲間マッチングアプリ</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .serif {
+            font-family: 'Noto Serif JP', serif;
+        }
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=A%20warm%20and%20inviting%20scene%20of%20people%20walking%20dogs%20in%20a%20park%20during%20golden%20hour.%20The%20left%20side%20has%20a%20soft%20gradient%20that%20transitions%20smoothly%20to%20white%2C%20perfect%20for%20text%20overlay.%20The%20right%20side%20shows%20happy%20people%20with%20various%20breeds%20of%20dogs%20on%20leashes%2C%20enjoying%20their%20walk.%20The%20image%20has%20a%20joyful%2C%20community%20feeling%20with%20soft%20natural%20lighting%20and%20urban%20park%20elements.&width=1200&height=600&seq=hero123&orientation=landscape');
+            background-size: cover;
+            background-position: right center;
+        }
+        input:focus {
+            outline: none;
+        }
+    </style>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#00B900',secondary:'#4A90E2'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- ナビゲーションバー -->
+    <header class="bg-white shadow-sm fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-['Pacifico'] text-primary">わんわんウォーク</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#features" class="text-gray-700 hover:text-primary transition">機能紹介</a>
+                <a href="#howto" class="text-gray-700 hover:text-primary transition">使い方</a>
+                <a href="#safety" class="text-gray-700 hover:text-primary transition">安心・安全</a>
+                <a href="#faq" class="text-gray-700 hover:text-primary transition">よくある質問</a>
+            </nav>
+            <a href="#register" class="bg-primary text-white px-4 py-2 rounded-button whitespace-nowrap hover:bg-opacity-90 transition">事前登録する 🐾</a>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero-section pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="container mx-auto px-4 w-full">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">今日の散歩、だれと行く？🐕‍🦺</h1>
+                <p class="text-xl md:text-2xl mb-8">日常の散歩を"つながり"に変える<br>犬の飼い主さん向けマッチングアプリ</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#register" class="bg-primary text-white px-6 py-3 rounded-button text-center font-bold text-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 whitespace-nowrap">
+                        LINEで事前登録する 🐾
+                    </a>
+                    <a href="#features" class="bg-white text-gray-800 px-6 py-3 rounded-button text-center font-bold text-lg shadow border hover:shadow-lg transition whitespace-nowrap">
+                        詳しく見る <i class="ri-arrow-right-line align-middle ml-1"></i>
+                    </a>
+                </div>
+                <p class="mt-4 text-sm text-gray-600">2025年夏リリース予定 | 事前登録で特典あり</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ペイン→ベネフィット -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">こんな悩み、ありませんか？</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 悩み1 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-user-heart-line ri-xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">散歩が少し寂しい</h3>
+                    <p class="text-gray-700 text-center">同じ犬種の飼い主さんや、近所の仲間と一緒に散歩できたら楽しいのに…</p>
+                    <div class="mt-4 pt-4 border-t border-gray-200">
+                        <p class="text-primary font-bold flex items-center justify-center">
+                            <i class="ri-check-line ri-lg mr-2"></i>
+                            半径1km以内の散歩仲間とマッチング
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 悩み2 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-dog-line ri-xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">愛犬の社会化が心配</h3>
+                    <p class="text-gray-700 text-center">他の犬との触れ合いが少なく、社会性を身につける機会が限られている…</p>
+                    <div class="mt-4 pt-4 border-t border-gray-200">
+                        <p class="text-primary font-bold flex items-center justify-center">
+                            <i class="ri-check-line ri-lg mr-2"></i>
+                            犬種・性格・サイズで相性の良い相手と出会える
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 悩み3 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="ri-shield-check-line ri-xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">見知らぬ人との散歩は不安</h3>
+                    <p class="text-gray-700 text-center">SNSは敷居が高く、安全に散歩仲間を見つける方法がない…</p>
+                    <div class="mt-4 pt-4 border-t border-gray-200">
+                        <p class="text-primary font-bold flex items-center justify-center">
+                            <i class="ri-check-line ri-lg mr-2"></i>
+                            本人確認済みユーザーのみで安心・安全
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要機能 -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">わんわんウォークの主要機能</h2>
+            <p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto">愛犬との散歩をもっと楽しく、もっと安全に。<br>新しい出会いと絆を作るための4つの機能</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- 機能1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
+                    <div class="md:w-2/5 bg-blue-50 p-6 flex items-center justify-center">
+                        <div class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="ri-map-pin-user-line ri-2x text-blue-600"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 p-6">
+                        <h3 class="text-xl font-bold mb-3">近くの散歩仲間を検索</h3>
+                        <p class="text-gray-700">半径1km以内の散歩仲間をマップで表示。犬種、性格、散歩時間帯でフィルタリングして、ぴったりの相手を見つけられます。</p>
+                        <p class="text-primary font-medium mt-3">リアルタイム表示で今すぐ散歩できる仲間も見つかる！</p>
+                    </div>
+                </div>
+                
+                <!-- 機能2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
+                    <div class="md:w-2/5 bg-green-50 p-6 flex items-center justify-center">
+                        <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="ri-chat-check-line ri-2x text-green-600"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 p-6">
+                        <h3 class="text-xl font-bold mb-3">承認制チャットで安心</h3>
+                        <p class="text-gray-700">メッセージのやり取りは相互承認後のみ。プロフィールを確認してから交流を始められるので、安心して利用できます。</p>
+                        <p class="text-primary font-medium mt-3">LINEで通知が届くので見逃しなし！</p>
+                    </div>
+                </div>
+                
+                <!-- 機能3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
+                    <div class="md:w-2/5 bg-yellow-50 p-6 flex items-center justify-center">
+                        <div class="w-24 h-24 bg-yellow-100 rounded-full flex items-center justify-center">
+                            <i class="ri-shield-user-line ri-2x text-yellow-600"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 p-6">
+                        <h3 class="text-xl font-bold mb-3">本人確認とワクチン証明</h3>
+                        <p class="text-gray-700">eKYC本人確認と愛犬のワクチン接種証明書登録で、安全性を確保。信頼できる環境で散歩仲間を見つけられます。</p>
+                        <p class="text-primary font-medium mt-3">認証済みバッジで一目で安心感！</p>
+                    </div>
+                </div>
+                
+                <!-- 機能4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
+                    <div class="md:w-2/5 bg-red-50 p-6 flex items-center justify-center">
+                        <div class="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center">
+                            <i class="ri-footprint-line ri-2x text-red-600"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 p-6">
+                        <h3 class="text-xl font-bold mb-3">歩数ランキングで楽しく継続</h3>
+                        <p class="text-gray-700">散歩の歩数をカウントして、ランキング形式で表示。地域や犬種別のランキングで楽しく継続できる仕組みです。</p>
+                        <p class="text-primary font-medium mt-3">毎月のチャレンジで特典もゲット！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- アプリの使い方 -->
+    <section id="howto" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">わんわんウォークの使い方</h2>
+            <p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto">たった3ステップで、新しい散歩体験が始まります</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- ステップ1 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">1</div>
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm h-full">
+                        <div class="w-20 h-20 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="ri-user-add-line ri-2x text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">プロフィール登録</h3>
+                        <p class="text-gray-700 text-center">あなたと愛犬の情報を登録。散歩の希望時間帯や好みのコースなども設定できます。</p>
+                    </div>
+                </div>
+                
+                <!-- ステップ2 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">2</div>
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm h-full">
+                        <div class="w-20 h-20 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="ri-search-line ri-2x text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">散歩仲間を探す</h3>
+                        <p class="text-gray-700 text-center">マップから近くの散歩仲間をチェック。気になる相手にリクエストを送ります。</p>
+                    </div>
+                </div>
+                
+                <!-- ステップ3 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold">3</div>
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm h-full">
+                        <div class="w-20 h-20 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center">
+                            <i class="ri-walk-line ri-2x text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-3">マッチングして散歩へ</h3>
+                        <p class="text-gray-700 text-center">マッチング成立でLINE通知。チャットで待ち合わせ場所を決めて、一緒に散歩に出かけましょう！</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#register" class="inline-block bg-primary text-white px-8 py-3 rounded-button font-bold text-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 whitespace-nowrap">
+                    今すぐ事前登録する 🐾
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ユーザーボイス -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">ユーザーの声</h2>
+            <p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto">ベータテスト参加者からの声をご紹介</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- レビュー1 -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="ri-user-smile-line ri-lg text-blue-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold">佐藤 美咲さん</p>
+                            <p class="text-sm text-gray-600">32歳・トイプードル飼い主</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-700">「散歩が倍楽しくなりました！同じトイプードルの飼い主さんと知り合えて、愛犬も社交的になってきています。安全面も考慮されていて安心です。」</p>
+                </div>
+                
+                <!-- レビュー2 -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="ri-user-smile-line ri-lg text-green-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold">田中 健太さん</p>
+                            <p class="text-sm text-gray-600">28歳・柴犬飼い主</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                    </div>
+                    <p class="text-gray-700">「引っ越してきたばかりで知り合いがいなかったのですが、このアプリのおかげで近所の犬友達ができました。柴犬仲間が見つかって、情報交換も楽しいです！」</p>
+                </div>
+                
+                <!-- レビュー3 -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="ri-user-smile-line ri-lg text-red-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold">山田 優子さん</p>
+                            <p class="text-sm text-gray-600">41歳・ダックスフンド飼い主</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-3">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p class="text-gray-700">「子育てで忙しく、愛犬との散歩が義務になりかけていましたが、同じ境遇のママさんと出会えて散歩が楽しみになりました。歩数ランキングも励みになります！」</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 安心・安全への取り組み -->
+    <section id="safety" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">安心・安全への取り組み</h2>
+            <p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto">わんわんウォークでは、ユーザーの皆様が安心して利用できるよう、様々な取り組みを行っています</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-blue-50 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="ri-shield-check-line ri-lg text-blue-600"></i>
+                        </div>
+                        ユーザー認証システム
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-check-line text-primary"></i>
+                            </div>
+                            <p>eKYCによる本人確認を実施し、なりすまし防止</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-check-line text-primary"></i>
+                            </div>
+                            <p>愛犬のワクチン接種証明書の登録必須</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-check-line text-primary"></i>
+                            </div>
+                            <p>認証済みユーザーには専用バッジを表示</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-green-50 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="ri-lock-line ri-lg text-green-600"></i>
+                        </div>
+                        プライバシー保護
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-check-line text-primary"></i>
+                            </div>
+                            <p>位置情報は半径100m単位でぼかして表示</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-check-line text-primary"></i>
+                            </div>
+                            <p>個人情報は相互承認後のみ開示</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-check-line text-primary"></i>
+                            </div>
+                            <p>ブロック機能で不要な接触を防止</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-yellow-50 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="ri-alarm-warning-line ri-lg text-yellow-600"></i>
+                        </div>
+                        通報・監視システム
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-check-line text-primary"></i>
+                            </div>
+                            <p>不適切なユーザーの通報システム完備</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-check-line text-primary"></i>
+                            </div>
+                            <p>24時間365日のモニタリング体制</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-check-line text-primary"></i>
+                            </div>
+                            <p>AIによるメッセージ監視で不適切な会話を検知</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-red-50 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="ri-heart-pulse-line ri-lg text-red-600"></i>
+                        </div>
+                        安全な散歩のサポート
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-check-line text-primary"></i>
+                            </div>
+                            <p>公共の場所での待ち合わせを推奨</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-check-line text-primary"></i>
+                            </div>
+                            <p>散歩中のSOSボタンで緊急連絡</p>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                <i class="ri-check-line text-primary"></i>
+                            </div>
+                            <p>散歩コースの事前共有機能</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 事前登録CTAセクション -->
+    <section id="register" class="py-16 bg-primary bg-opacity-10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">今すぐ事前登録で特典をゲット！</h2>
+                <p class="text-xl mb-8">正式版リリース時にプレミアム機能が<br><span class="font-bold text-primary text-2xl">1ヶ月無料</span>でご利用いただけます</p>
+                
+                <div class="bg-white rounded-lg p-8 shadow-lg">
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="text-center">
+                            <div class="w-32 h-32 mx-auto mb-4 border-4 border-primary rounded-lg flex items-center justify-center bg-gray-100">
+                                <p class="text-gray-800">QRコード</p>
+                            </div>
+                            <p class="text-sm text-gray-600">LINEで友だち追加</p>
+                        </div>
+                        
+                        <div class="text-center md:text-left">
+                            <h3 class="text-2xl font-bold mb-3">LINE友だち追加で<br>事前登録完了！</h3>
+                            <p class="text-gray-700 mb-4">リリース情報やお得な特典情報を<br>いち早くお届けします</p>
+                            <a href="#" class="inline-block bg-primary text-white px-8 py-4 rounded-button font-bold text-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 whitespace-nowrap">
+                                LINEで事前登録する 🐾
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-gray-200">
+                        <p class="text-gray-700">事前登録特典</p>
+                        <ul class="mt-2 space-y-2">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <p>プレミアム機能1ヶ月無料（通常980円/月）</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <p>限定デジタルステッカー10種類プレゼント</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-2 mt-0.5">
+                                    <i class="ri-check-line text-primary"></i>
+                                </div>
+                                <p>先行体験会への優先招待（抽選100名様）</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <p class="mt-6 text-sm text-gray-600">※特典は予告なく変更になる場合があります</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">よくある質問</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- 質問1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition text-left" aria-expanded="false">
+                        <span class="font-bold">料金はいくらですか？</span>
+                        <i class="ri-arrow-down-s-line ri-lg"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-700">基本機能は無料でご利用いただけます。プレミアム機能（広範囲検索、メッセージ優先表示、広告非表示など）は月額980円（税込）となります。事前登録特典として1ヶ月無料でプレミアム機能をお試しいただけます。</p>
+                    </div>
+                </div>
+                
+                <!-- 質問2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition text-left" aria-expanded="false">
+                        <span class="font-bold">どのような犬種でも利用できますか？</span>
+                        <i class="ri-arrow-down-s-line ri-lg"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-700">はい、すべての犬種でご利用いただけます。小型犬から大型犬まで、犬種や性格、サイズなどの情報を登録いただくことで、相性の良い散歩仲間をマッチングします。特定の犬種のみのフィルタリングも可能です。</p>
+                    </div>
+                </div>
+                
+                <!-- 質問3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition text-left" aria-expanded="false">
+                        <span class="font-bold">散歩の待ち合わせは安全ですか？</span>
+                        <i class="ri-arrow-down-s-line ri-lg"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-700">安全性を最優先に考えたシステムを採用しています。全ユーザーは本人確認を実施済みで、公共の場所での待ち合わせを推奨しています。また、散歩中のSOSボタンや通報システムも完備しています。不安な場合は、最初は複数人でのグループ散歩から始めることもできます。</p>
+                    </div>
+                </div>
+                
+                <!-- 質問4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition text-left" aria-expanded="false">
+                        <span class="font-bold">対応地域はどこですか？</span>
+                        <i class="ri-arrow-down-s-line ri-lg"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-700">正式リリース時は首都圏（東京、神奈川、千葉、埼玉）を中心にサービスを展開予定です。その後、順次全国の主要都市部へ拡大していく予定です。事前登録時にお住まいの地域をご登録いただくと、サービス開始時にお知らせいたします。</p>
+                    </div>
+                </div>
+                
+                <!-- 質問5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition text-left" aria-expanded="false">
+                        <span class="font-bold">リリース予定はいつですか？</span>
+                        <i class="ri-arrow-down-s-line ri-lg"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 bg-white">
+                        <p class="text-gray-700">2025年夏に正式リリースを予定しています。事前登録いただいた方には、先行してベータ版への招待をお送りする予定です（2025年春頃を予定）。最新情報はLINE公式アカウントで随時お知らせいたします。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- ロゴと説明 -->
+                <div class="col-span-1 lg:col-span-2">
+                    <a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">わんわんウォーク</a>
+                    <p class="text-gray-400 mb-4">日常の散歩を"つながり"に変える、<br>犬の飼い主さん向けマッチングアプリ</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition">
+                            <i class="ri-twitter-x-line ri-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition">
+                            <i class="ri-instagram-line ri-lg"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-primary transition">
+                            <i class="ri-line-line ri-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- リンク1 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">サービス</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition">機能紹介</a></li>
+                        <li><a href="#howto" class="text-gray-400 hover:text-white transition">使い方</a></li>
+                        <li><a href="#safety" class="text-gray-400 hover:text-white transition">安心・安全</a></li>
+                        <li><a href="#register" class="text-gray-400 hover:text-white transition">事前登録</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition">よくある質問</a></li>
+                    </ul>
+                </div>
+                
+                <!-- リンク2 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">会社情報</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">会社概要</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">プライバシーポリシー</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">利用規約</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">特定商取引法</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+                <p>© 2025 わんわんウォーク All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- スクリプト -->
+    <script id="faq-toggle-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    
+                    // アイコンを回転
+                    const icon = this.querySelector('i');
+                    
+                    if (isExpanded) {
+                        content.classList.add('hidden');
+                        this.setAttribute('aria-expanded', 'false');
+                        icon.classList.remove('transform', 'rotate-180');
+                    } else {
+                        content.classList.remove('hidden');
+                        this.setAttribute('aria-expanded', 'true');
+                        icon.classList.add('transform', 'rotate-180');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="smooth-scroll-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

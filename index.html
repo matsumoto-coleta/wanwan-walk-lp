@@ -23,7 +23,7 @@
 <body class="bg-white">
     <!-- ヘッダー -->
     <header class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
-        <div class="flex justify-between items-center px-4 py-3">
+        <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
             <div class="font-['Zen_Maru_Gothic'] text-2xl text-orange-900 bg-clip-text font-bold tracking-wide" style="font-family: 'Zen_Maru_Gothic', cursive; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
                 わんわんウォーク
             </div>
@@ -37,11 +37,11 @@
     <!-- メインコンテンツ -->
     <main class="pt-16 pb-20">
         <!-- ヒーローセクション -->
-        <section class="relative h-[480px] overflow-hidden">
+        <section class="relative h-[480px] md:h-[600px] overflow-hidden">
             <img src="images/header.png" alt="犬の散歩シーン" class="absolute inset-0 w-full h-full object-cover object-top">
             <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-white p-4">
-                <h1 class="text-3xl font-bold mb-2 text-center font-['Zen_Maru_Gothic']">今日の散歩<br>だれと行こう？</h1>
-                <p class="text-lg mb-8 text-center">日常の散歩を"つながり"に変える<br>散歩マッチングアプリ</p>
+                <h1 class="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-center font-['Zen_Maru_Gothic']">今日の散歩<br class="md:hidden"><span class="hidden md:inline">、</span>だれと行こう？</h1>
+                <p class="text-lg md:text-xl mb-8 text-center">日常の散歩を"つながり"に変える<br class="md:hidden"><span class="hidden md:inline"> </span>散歩マッチングアプリ</p>
                 <button class="bg-primary text-white px-6 py-3 !rounded-button font-bold text-lg shadow-lg hover:bg-opacity-90 transition duration-300 cursor-pointer flex items-center">
                     <i class="ri-line-fill ri-lg mr-2 w-6 h-6 flex items-center justify-center"></i>
                     LINEで事前登録する🐾
@@ -54,48 +54,50 @@
         </section>
 
         <!-- 課題解決セクション -->
-        <section class="px-4 py-10 bg-gray-50">
-            <h2 class="text-2xl font-bold text-center mb-8">こんなお悩みありませんか？</h2>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="bg-white p-4 rounded-lg shadow-sm">
+        <section class="px-4 py-10 md:py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">こんなお悩みありませんか？</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm">
                     <div class="w-12 h-12 mx-auto mb-3 bg-primary bg-opacity-10 rounded-full flex items-center justify-center">
                         <i class="ri-user-heart-line ri-lg text-primary w-6 h-6 flex items-center justify-center"></i>
                     </div>
-                    <h3 class="text-sm font-bold text-center mb-2">散歩が少し寂しい</h3>
-                    <p class="text-xs text-gray-600 text-center">同じ犬好きと一緒に散歩すれば、毎日がもっと楽しくなります</p>
+                    <h3 class="text-sm md:text-base font-bold text-center mb-2">散歩が少し寂しい</h3>
+                    <p class="text-xs md:text-sm text-gray-600 text-center">同じ犬好きと一緒に散歩すれば、毎日がもっと楽しくなります</p>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm">
                     <div class="w-12 h-12 mx-auto mb-3 bg-primary bg-opacity-10 rounded-full flex items-center justify-center">
                         <i class="ri-emotion-sad-line ri-lg text-primary w-6 h-6 flex items-center justify-center"></i>
                     </div>
-                    <h3 class="text-sm font-bold text-center mb-2">愛犬の社会性が心配</h3>
-                    <p class="text-xs text-gray-600 text-center">他の犬や人との触れ合いで、社会性を育みましょう</p>
+                    <h3 class="text-sm md:text-base font-bold text-center mb-2">愛犬の社会性が心配</h3>
+                    <p class="text-xs md:text-sm text-gray-600 text-center">他の犬や人との触れ合いで、社会性を育みましょう</p>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm">
                     <div class="w-12 h-12 mx-auto mb-3 bg-primary bg-opacity-10 rounded-full flex items-center justify-center">
                         <i class="ri-shield-check-line ri-lg text-primary w-6 h-6 flex items-center justify-center"></i>
                     </div>
-                    <h3 class="text-sm font-bold text-center mb-2">安全に出会いたい</h3>
-                    <p class="text-xs text-gray-600 text-center">本人確認済みユーザーだけが参加できる安心の仕組み</p>
+                    <h3 class="text-sm md:text-base font-bold text-center mb-2">安全に出会いたい</h3>
+                    <p class="text-xs md:text-sm text-gray-600 text-center">本人確認済みユーザーだけが参加できる安心の仕組み</p>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm">
                     <div class="w-12 h-12 mx-auto mb-3 bg-primary bg-opacity-10 rounded-full flex items-center justify-center">
                         <i class="ri-heart-3-line ri-lg text-primary w-6 h-6 flex items-center justify-center"></i>
                     </div>
-                    <h3 class="text-sm font-bold text-center mb-2">犬と触れ合いたい</h3>
-                    <p class="text-xs text-gray-600 text-center">犬を飼えなくても、散歩仲間として参加できます</p>
+                    <h3 class="text-sm md:text-base font-bold text-center mb-2">犬と触れ合いたい</h3>
+                    <p class="text-xs md:text-sm text-gray-600 text-center">犬を飼えなくても、散歩仲間として参加できます</p>
                 </div>
             </div>
         </section>
 
         <!-- 主要機能セクション -->
-        <section class="px-4 py-10">
-            <h2 class="text-2xl font-bold text-center mb-2">わんわんウォークの特徴</h2>
-            <p class="text-center text-gray-600 mb-8">あなたと愛犬の毎日をもっと楽しく</p>
-            
-            <div class="overflow-x-auto pb-4 -mx-4">
-                <div class="flex px-4 space-x-4 w-max">
-                    <div class="w-[280px] bg-white rounded-lg shadow-sm overflow-hidden flex-shrink-0 border border-gray-100">
+        <section class="px-4 py-10 md:py-16">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-2">わんわんウォークの特徴</h2>
+                <p class="text-center text-gray-600 mb-8 md:mb-12">あなたと愛犬の毎日をもっと楽しく</p>
+                
+                <div class="overflow-x-auto md:overflow-visible pb-4 -mx-4 md:mx-0">
+                    <div class="flex md:grid md:grid-cols-4 px-4 md:px-0 space-x-4 md:space-x-0 md:gap-6 w-max md:w-auto">
+                    <div class="w-[280px] md:w-auto bg-white rounded-lg shadow-sm overflow-hidden flex-shrink-0 border border-gray-100">
                         <img src="images/walking_map.png" alt="近くの散歩仲間を検索する画面" class="w-full h-[180px] object-cover object-center">
                         <div class="p-4">
                             <div class="flex items-center mb-2">
@@ -105,7 +107,7 @@
                             <p class="text-sm text-gray-600">半径1km以内のユーザーを表示。愛犬の相性や飼い主の趣味で絞り込み可能です。</p>
                         </div>
                     </div>
-                    <div class="w-[280px] bg-white rounded-lg shadow-sm overflow-hidden flex-shrink-0 border border-gray-100">
+                    <div class="w-[280px] md:w-auto bg-white rounded-lg shadow-sm overflow-hidden flex-shrink-0 border border-gray-100">
                         <img src="images/chat.png" alt="チャットは承認制で安心の画面" class="w-full h-[180px] object-cover object-center">
                         <div class="p-4">
                             <div class="flex items-center mb-2">
@@ -115,7 +117,7 @@
                             <p class="text-sm text-gray-600">マッチング後のみメッセージ交換が可能。ブロック機能も充実しています。</p>
                         </div>
                     </div>
-                    <div class="w-[280px] bg-white rounded-lg shadow-sm overflow-hidden flex-shrink-0 border border-gray-100">
+                    <div class="w-[280px] md:w-auto bg-white rounded-lg shadow-sm overflow-hidden flex-shrink-0 border border-gray-100">
                         <img src="images/profile.png" alt="eKYC+ワクチン証明で安全確保の画面" class="w-full h-[180px] object-cover object-center">
                         <div class="p-4">
                             <div class="flex items-center mb-2">
@@ -125,7 +127,7 @@
                             <p class="text-sm text-gray-600">本人確認と愛犬のワクチン接種証明で、安全・安心の環境を提供します。</p>
                         </div>
                     </div>
-                    <div class="w-[280px] bg-white rounded-lg shadow-sm overflow-hidden flex-shrink-0 border border-gray-100">
+                    <div class="w-[280px] md:w-auto bg-white rounded-lg shadow-sm overflow-hidden flex-shrink-0 border border-gray-100">
                         <img src="images/ranking.png" alt="歩数ランキングで楽しく継続の画面" class="w-full h-[180px] object-cover object-center">
                         <div class="p-4">
                             <div class="flex items-center mb-2">
@@ -135,9 +137,9 @@
                             <p class="text-sm text-gray-600">毎日の散歩記録でポイント獲得。ランキング上位者には特典も！</p>
                         </div>
                     </div>
+                    </div>
                 </div>
-            </div>
-            <div class="flex justify-center mt-4">
+                <div class="flex justify-center mt-4 md:hidden">
                 <div class="flex space-x-1">
                     <span class="w-2 h-2 rounded-full bg-primary"></span>
                     <span class="w-2 h-2 rounded-full bg-gray-300"></span>
@@ -145,12 +147,14 @@
                     <span class="w-2 h-2 rounded-full bg-gray-300"></span>
                 </div>
             </div>
+            </div>
         </section>
 
         <!-- アプリの使い方 -->
-        <section class="px-4 py-10 bg-gray-50">
-            <h2 class="text-2xl font-bold text-center mb-8">アプリの使い方</h2>
-            <div class="max-w-md mx-auto">
+        <section class="px-4 py-10 md:py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">アプリの使い方</h2>
+                <div class="max-w-md mx-auto">
                 <div class="flex items-start mb-8">
                     <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold flex-shrink-0 mr-4">1</div>
                     <div>
@@ -175,42 +179,46 @@
                         <p class="text-sm text-gray-600">マッチングしたらメッセージで待ち合わせ場所と時間を決めて、一緒に散歩を楽しみましょう！</p>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
         <!-- ユーザーの声 -->
-        <section class="px-4 py-10">
-            <h2 class="text-2xl font-bold text-center mb-8">ユーザーの声</h2>
-            <div class="space-y-4 max-w-md mx-auto">
-                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+        <section class="px-4 py-10 md:py-16">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">ユーザーの声</h2>
+                <div class="space-y-4 max-w-3xl mx-auto">
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-100">
                     <div class="flex items-center mb-2">
                         <div class="text-yellow-400 mr-2">★★★★★</div>
                         <div class="text-sm font-medium">30代女性・チワワの飼い主さん</div>
                     </div>
                     <p class="text-sm text-gray-600">「毎日の散歩が倍楽しくなりました！同じ犬種を飼っている方と知り合えて、躾の悩みも相談できて助かっています。」</p>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-100">
                     <div class="flex items-center mb-2">
                         <div class="text-yellow-400 mr-2">★★★★★</div>
                         <div class="text-sm font-medium">40代男性・柴犬の飼い主さん</div>
                     </div>
                     <p class="text-sm text-gray-600">「引っ越してきたばかりで知り合いがいなかったのですが、このアプリのおかげで近所の犬友達ができました。愛犬も社交的になってきています。」</p>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-100">
                     <div class="flex items-center mb-2">
                         <div class="text-yellow-400 mr-2">★★★★★</div>
                         <div class="text-sm font-medium">20代女性・犬を飼っていない方</div>
                     </div>
                     <p class="text-sm text-gray-600">「一人暮らしで犬は飼えないけど、このアプリで散歩パートナーになれて犬と触れ合える時間が持てて嬉しいです。飼い主さんも親切で楽しい時間を過ごせています。」</p>
                 </div>
+                </div>
             </div>
         </section>
 
         <!-- 安心・安全への取り組み -->
-        <section class="px-4 py-10 bg-gray-50">
-            <h2 class="text-2xl font-bold text-center mb-8">安心・安全への取り組み</h2>
-            <div class="max-w-md mx-auto space-y-4">
-                <div class="bg-white p-4 rounded-lg shadow-sm">
+        <section class="px-4 py-10 md:py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">安心・安全への取り組み</h2>
+                <div class="max-w-2xl mx-auto space-y-4">
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm">
                     <div class="flex items-center justify-between cursor-pointer" id="safety-1-header">
                         <div class="flex items-center">
                             <i class="ri-user-follow-line ri-lg text-primary mr-3 w-6 h-6 flex items-center justify-center"></i>
@@ -222,7 +230,7 @@
                         <p>全てのユーザーは身分証明書による本人確認を実施。なりすまし防止と安全なコミュニティを維持します。</p>
                     </div>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm">
                     <div class="flex items-center justify-between cursor-pointer" id="safety-2-header">
                         <div class="flex items-center">
                             <i class="ri-alarm-warning-line ri-lg text-primary mr-3 w-6 h-6 flex items-center justify-center"></i>
@@ -234,7 +242,7 @@
                         <p>不適切な行為があった場合はすぐに通報可能。24時間体制でモニタリングし、迅速に対応します。</p>
                     </div>
                 </div>
-                <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-sm">
                     <div class="flex items-center justify-between cursor-pointer" id="safety-3-header">
                         <div class="flex items-center">
                             <i class="ri-map-pin-user-line ri-lg text-primary mr-3 w-6 h-6 flex items-center justify-center"></i>
@@ -246,13 +254,15 @@
                         <p>正確な住所は表示されず、おおよその距離のみ表示。プライバシーを守りながら近くのユーザーとマッチングできます。</p>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
         <!-- プラン説明 -->
-        <section class="px-4 py-10">
-            <h2 class="text-2xl font-bold text-center mb-8">料金プラン</h2>
-            <div class="max-w-md mx-auto grid grid-cols-2 gap-4">
+        <section class="px-4 py-10 md:py-16">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">料金プラン</h2>
+                <div class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
                     <div class="text-center mb-4">
                         <h3 class="font-bold text-lg">無料プラン</h3>
@@ -312,13 +322,15 @@
                         </li>
                     </ul>
                 </div>
+                </div>
+                <p class="text-center text-sm mt-4 text-gray-600">登録後1週間は全ての機能を無料でお試しいただけます</p>
             </div>
-            <p class="text-center text-sm mt-4 text-gray-600">登録後1週間は全ての機能を無料でお試しいただけます</p>
         </section>
 
         <!-- 最終CTA -->
-        <section class="px-4 py-10 bg-primary bg-opacity-10 dog-paw-pattern">
-            <div class="max-w-md mx-auto text-center">
+        <section class="px-4 py-10 md:py-16 bg-primary bg-opacity-10 dog-paw-pattern">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-md mx-auto text-center">
                 <h2 class="text-2xl font-bold mb-4">今すぐ事前登録して<br>特典をゲット！</h2>
                 <p class="text-sm mb-6">正式版リリース時にプレミアム機能が<br><span class="font-bold text-primary">1ヶ月間無料</span>でご利用いただけます</p>
                 
@@ -339,13 +351,15 @@
                         <p class="text-sm">リリース情報を順次お届けします。お楽しみに！</p>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
         <!-- FAQ -->
-        <section class="px-4 py-10">
-            <h2 class="text-2xl font-bold text-center mb-8">よくある質問</h2>
-            <div class="max-w-md mx-auto space-y-4">
+        <section class="px-4 py-10 md:py-16">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">よくある質問</h2>
+                <div class="max-w-2xl mx-auto space-y-4">
                 <div class="border border-gray-200 rounded-lg overflow-hidden">
                     <div class="flex items-center justify-between p-4 cursor-pointer bg-white" id="faq-1-header">
                         <h3 class="font-medium">料金はいくらですか？</h3>
@@ -391,13 +405,14 @@
                         <p class="text-sm text-gray-600">サービス開始時は首都圏（東京、神奈川、千葉、埼玉）を中心にサービスを提供予定です。その後、順次全国の主要都市へ拡大していく予定です。</p>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- フッター -->
     <footer class="bg-gray-800 text-white py-8 px-4">
-        <div class="max-w-md mx-auto">
+        <div class="max-w-6xl mx-auto">
             <div class="font-semibold text-white text-2xl text-center mb-6">わんわんウォーク</div>
             <div class="flex justify-center space-x-6 mb-6">
                 <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center cursor-pointer">
